@@ -1,6 +1,6 @@
 # Poker Board API
 
-This is an API to record buy-ins and buy-outs for my Poker nights with friends.
+This is an API to record buy-ins, buy-outs, and loans for my Poker nights with friends.
 
 ### Technology
 * Typescript
