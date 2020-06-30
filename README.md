@@ -1,6 +1,6 @@
 # Poker Board API
 
-This is an API to record buy-ins, buy-outs, and loans for my Poker nights with friends.
+This is an API for recording buy-ins, buy-outs, and loans for my Poker nights with friends.
 
 ### Technology
 * Typescript
@@ -8,7 +8,7 @@ This is an API to record buy-ins, buy-outs, and loans for my Poker nights with f
 * Mongoose, MongoDb
 * Jest (testing)
 
-### Api Documentation
+### API Documentation
 https://app.swaggerhub.com/apis-docs/happyhung95/Poker-board/1.0.0
 
 Helsinki - 30.06.2020
