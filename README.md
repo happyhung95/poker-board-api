@@ -14,9 +14,8 @@ https://app.swaggerhub.com/apis-docs/happyhung95/Poker-board/1.0.0
 ### Use this API
 Feel free to use this API at: https://poker-board.herokuapp.com/api/v1
 
-### <u>Disclaimer</u>: 
-#### All data posted via this API will be publicly available to the world. I do not take responsibility for protecting the privacy of the published data.
-
+### Disclaimer: 
+#### All data posted via this API will be publicly available to the world. I do not take responsibility for protecting the published data.
 
 Enjoy!
 

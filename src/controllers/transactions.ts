@@ -99,6 +99,10 @@ export const updateTransactions = async (req: Request, res: Response, next: Next
     // grab the most recent game object with updated players' balance
     game = await Game.findById(gameId).exec()
 
+    //Trigger all connected user to update data
+    const io = req.app.locals.io
+    io.emit(`update ${gameId}`, game)
+
     res.status(201).json(game)
   } catch (error) {
     next(new InternalServerError('Internal Server Error', error))

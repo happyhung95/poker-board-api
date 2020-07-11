@@ -28,6 +28,7 @@
     "@types/bcrypt": "^3.0.0",
     "@types/jsonwebtoken": "^8.3.7",
     "@types/morgan": "^1.9.1",
+    "@types/socket.io": "^2.1.8",
     "async": "^3.2.0",
     "bcrypt-nodejs": "^0.0.3",
     "bluebird": "^3.7.2",
@@ -54,6 +55,7 @@
     "pug": "^2.0.4",
     "request": "^2.88.2",
     "request-promise": "^4.2.5",
+    "socket.io": "^2.3.0",
     "winston": "^3.2.1"
   },
   "devDependencies": {

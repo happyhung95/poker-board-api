@@ -77,6 +77,10 @@ export const updatePlayers = async (req: Request, res: Response, next: NextFunct
     // update players to database after addition and/or removal
     game.save()
 
+    //Trigger all connected user to update data
+    const io = req.app.locals.io
+    io.emit(`update ${gameId}`, game)
+
     // if error exists, respond with error after saving the successful updates
     if (errorCount !== 0) return next(new InvalidRequestError(`Invalid Request: ${typeErrorMsg} ${errorMsg}`))
 

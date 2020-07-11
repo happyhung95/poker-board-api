@@ -43,7 +43,7 @@ export async function createGame(override = game) {
 
 export async function generateGame(num: number) {
   for (let i = 1; i < num + 1; i++) {
-    const game = { name: `Helsinki ${1}`, buyIn: 40 }
+    const game = { name: `Helsinki ${i}`, buyIn: 40 }
     await createGame(game)
   }
 }
