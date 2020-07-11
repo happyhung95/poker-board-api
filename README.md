@@ -11,6 +11,9 @@ This is an API for recording buy-ins, buy-outs, and loans for my Poker nights wi
 ### API Documentation
 https://app.swaggerhub.com/apis-docs/happyhung95/Poker-board/1.0.0
 
+### Real time update:
+The server emits a socket event `'update {gameId}'` with the updated game object at every transactions / players update request.
+
 ### Use this API
 Feel free to use this API at: https://poker-board.herokuapp.com/api/v1
 
