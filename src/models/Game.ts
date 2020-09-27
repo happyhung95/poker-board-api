@@ -5,6 +5,7 @@ export type GameDocument = Document & {
   name: string;
   buyIn: number;
   players: PlayerDocument[];
+  gameClosed: boolean;
 }
 
 const gameSchema = new mongoose.Schema(
@@ -20,6 +21,10 @@ const gameSchema = new mongoose.Schema(
       trim: true,
     },
     players: [playerSchema],
+    gameClosed: {
+      type: Boolean,
+      default: false,
+    },
   },
   { timestamps: true }
 )

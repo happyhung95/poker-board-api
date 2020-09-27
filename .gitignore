@@ -41,6 +41,7 @@ dist/**/*
 
 # ignore yarn.lock
 yarn.lock
+package-lock.json
 
 *.swo
 *.swp
