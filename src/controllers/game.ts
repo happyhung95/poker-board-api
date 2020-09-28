@@ -49,9 +49,16 @@ export const changeStatusGame = async (req: Request, res: Response, next: NextFu
     const { gameClosed } = req.body
     if (!gameId) return next(new InvalidRequestError('Invalid Request: name and buyIn parameter required'))
 
-    const updatedGame = await Game.findOneAndUpdate({ _id: gameId }, { gameClosed }, { new: true })
+    const game = await Game.findById(gameId).exec()
+    if (!game) return next(new NotFoundError('Game not found'))
 
-    res.status(200).json(updatedGame)
+    game.gameClosed = gameClosed
+    game.save()
+
+    const io = req.app.locals.io
+    io.emit(`update ${gameId}`, game)
+
+    res.status(200).json(game)
   } catch (error) {
     next(new InternalServerError('Internal Server Error', error))
   }
