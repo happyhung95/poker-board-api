@@ -42,7 +42,22 @@ export const createGame = async (req: Request, res: Response, next: NextFunction
   }
 }
 
-//* DELETE /game
+//* PATCH /game/:gameId
+export const changeStatusGame = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const gameId = req.params.gameId
+    const { gameClosed } = req.body
+    if (!gameId) return next(new InvalidRequestError('Invalid Request: name and buyIn parameter required'))
+
+    const updatedGame = await Game.findOneAndUpdate({ _id: gameId }, { gameClosed }, { new: true })
+
+    res.status(200).json(updatedGame)
+  } catch (error) {
+    next(new InternalServerError('Internal Server Error', error))
+  }
+}
+
+//* DELETE /game/:gameId
 export const deleteGame = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const gameId = req.params.gameId

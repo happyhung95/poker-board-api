@@ -42,7 +42,7 @@ export const updatePlayers = async (req: Request, res: Response, next: NextFunct
         const newPlayer = new Player({ name })
         const buyIn = new Transaction({
           ownerId: newPlayer._id,
-          description: 'Bank',
+          description: 'Buy-in',
           amount: -game.buyIn,
           refId: null,
           counterPartyId: null,
