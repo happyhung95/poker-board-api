@@ -42,7 +42,7 @@ export const createGame = async (req: Request, res: Response, next: NextFunction
   }
 }
 
-//* PATCH /game/:gameId
+//* PUT /game/:gameId
 export const changeStatusGame = async (req: Request, res: Response, next: NextFunction) => {
   try {
     const gameId = req.params.gameId
