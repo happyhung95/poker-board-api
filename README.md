@@ -17,8 +17,10 @@ The server emits a socket event `'update {gameId}'` with the updated game object
 ### Use this API
 Feel free to use this API at: https://poker-board.herokuapp.com/api/v1
 
-### Poker Table Mobile App
-A flutter app was written using this API: https://github.com/ramonvasc/PokerTable
+[Poker Board Client](https://poker.happyhung.com)
+
+[Poker Board Client Github](https://github.com/happyhung95/poker-board-client)
+
 
 ### Disclaimer: 
 #### All data posted via this API will be publicly available to the world. I do not take responsibility for protecting the published data.
