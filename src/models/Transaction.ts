@@ -7,6 +7,7 @@ export type TransactionDocument = Document & {
   description: string;
   amount: number;
   createdAt: Date;
+  deleted: boolean;
 }
 
 export const transactionSchema = new mongoose.Schema({
@@ -15,6 +16,7 @@ export const transactionSchema = new mongoose.Schema({
   counterPartyId: String,
   description: String,
   amount: Number,
+  deleted: { type: Boolean, default: false },
   createdAt: { type: Date, default: Date.now },
 })
 

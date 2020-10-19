@@ -55,19 +55,26 @@ export const updateTransactions = async (req: Request, res: Response, next: Next
           transactions.push(newTransaction)
           mostRecentBalance += amount
         } else if (type === RequestType.remove) {
-          //find transaction and check if exists
-          const transactionIndex = transactions.findIndex(({ _id }) => _id == transactionId)
-
-          // if not found, return error msg
-          if (!!transactionIndex) {
+          const transactionExist = transactions.find(transaction => transaction._id == transactionId)
+          if (!transactionExist) {
             errorCount++
-            errorMsg += `Transaction '${description}' (${transactionId}) not found. `
+            errorMsg += `Transaction (${transactionId}) not found. `
             return
           }
 
-          // remove transaction from the array
-          const removedTransaction = transactions.splice(transactionIndex, 1)
-          mostRecentBalance -= removedTransaction[0].amount
+          transactionExist.deleted = true
+
+          const removedTransaction = new Transaction({
+            ownerId,
+            counterPartyId,
+            description: `${description} (removed)`,
+            refId,
+            amount,
+            deleted: true,
+          })
+
+          transactions.push(removedTransaction)
+          mostRecentBalance += amount
         } else {
           errorCount++
           typeErrorMsg += `Require type: 'add' OR 'remove' in request: '${description}'. `
