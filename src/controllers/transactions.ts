@@ -69,12 +69,12 @@ export const updateTransactions = async (req: Request, res: Response, next: Next
             counterPartyId,
             description: `${description} (removed)`,
             refId,
-            amount,
+            amount: -amount,
             deleted: true,
           })
 
           transactions.push(removedTransaction)
-          mostRecentBalance += amount
+          mostRecentBalance -= amount
         } else {
           errorCount++
           typeErrorMsg += `Require type: 'add' OR 'remove' in request: '${description}'. `
