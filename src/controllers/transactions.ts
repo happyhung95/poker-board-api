@@ -61,9 +61,8 @@ export const updateTransactions = async (req: Request, res: Response, next: Next
             errorMsg += `Transaction (${transactionId}) not found. `
             return
           }
-
           transaction.deleted = true
-          transaction.description = `${description} ${transaction.amount} (removed)`
+          transaction.description = `${description} ${transaction.amount}`
           transaction.amount = 0
           mostRecentBalance -= amount
         } else {
