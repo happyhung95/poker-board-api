@@ -44,7 +44,7 @@ export const updatePlayers = async (req: Request, res: Response, next: NextFunct
           ownerId: newPlayer._id,
           description: 'Buy-in',
           amount: -game.buyIn,
-          refId: null,
+          refId: 'buyIn',
           counterPartyId: null,
         })
 
