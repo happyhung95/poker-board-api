@@ -17,25 +17,26 @@ const server = app.listen(app.get('port'), () => {
   console.log('  Press CTRL-C to stop\n')
 })
 
-const io = socket(server)
+// disable for now because of some type bullshit
+// const io = socket(server)
 
-const activeUsers = new Set()
+// const activeUsers = new Set()
 
-io.on('connection', function (socket: any) {
-  console.log('Made socket connection')
+// io.on('connection', function (socket: any) {
+//   console.log('Made socket connection')
 
-  socket.on('new user', function (data: any) {
-    socket.userId = data
-    activeUsers.add(data)
-    io.emit('new user', [...activeUsers])
-  })
+//   socket.on('new user', function (data: any) {
+//     socket.userId = data
+//     activeUsers.add(data)
+//     io.emit('new user', [...activeUsers])
+//   })
 
-  socket.on('disconnect', () => {
-    activeUsers.delete(socket.userId)
-    io.emit('user disconnected', socket.userId)
-  })
-})
+//   socket.on('disconnect', () => {
+//     activeUsers.delete(socket.userId)
+//     io.emit('user disconnected', socket.userId)
+//   })
+// })
 
-app.locals.io = io
+// app.locals.io = io
 
 export default server

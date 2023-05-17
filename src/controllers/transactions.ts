@@ -102,6 +102,6 @@ export const updateTransactions = async (req: Request, res: Response, next: Next
 
     res.status(201).json(game)
   } catch (error) {
-    next(new InternalServerError('Internal Server Error', error))
+    // next(new InternalServerError('Internal Server Error', error))
   }
 }

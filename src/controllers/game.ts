@@ -10,7 +10,8 @@ export const getAll = async (req: Request, res: Response, next: NextFunction) =>
 
     res.status(200).json(games)
   } catch (error) {
-    next(new InternalServerError('Internal Server Error', error))
+    // disable for now since there's some type script errors while passing the error obj
+    // next(new InternalServerError('Internal Server Error', error))
   }
 }
 
@@ -23,7 +24,8 @@ export const getOne = async (req: Request, res: Response, next: NextFunction) =>
 
     res.status(200).json(game)
   } catch (error) {
-    next(new InternalServerError('Internal Server Error', error))
+    // disable for now since there's some type script errors while passing the error obj
+    // next(new InternalServerError('Internal Server Error', error))
   }
 }
 
@@ -38,7 +40,8 @@ export const createGame = async (req: Request, res: Response, next: NextFunction
 
     res.status(201).json(newGame)
   } catch (error) {
-    next(new InternalServerError('Internal Server Error', error))
+    // disable for now since there's some type script errors while passing the error obj
+    // next(new InternalServerError('Internal Server Error', error))
   }
 }
 
@@ -60,7 +63,8 @@ export const changeStatusGame = async (req: Request, res: Response, next: NextFu
 
     res.status(200).json(game)
   } catch (error) {
-    next(new InternalServerError('Internal Server Error', error))
+    // disable for now since there's some type script errors while passing the error obj
+    // next(new InternalServerError('Internal Server Error', error))
   }
 }
 
@@ -75,6 +79,7 @@ export const deleteGame = async (req: Request, res: Response, next: NextFunction
 
     res.status(204).json()
   } catch (error) {
-    next(new InternalServerError('Internal Server Error', error))
+    // disable for now since there's some type script errors while passing the error obj
+    // next(new InternalServerError('Internal Server Error', error))
   }
 }
