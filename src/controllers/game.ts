@@ -58,9 +58,6 @@ export const changeStatusGame = async (req: Request, res: Response, next: NextFu
     game.gameClosed = gameClosed
     game.save()
 
-    const io = req.app.locals.io
-    io.emit(`update ${gameId}`, game)
-
     res.status(200).json(game)
   } catch (error) {
     // disable for now since there's some type script errors while passing the error obj
