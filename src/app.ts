@@ -20,6 +20,7 @@ mongoose
   .connect(mongoUrl)
   .then(() => {
     /** ready to use. The `mongoose.connect()` promise resolves to undefined. */
+    console.log('MongoDB connected successfully')
   })
   .catch((err: Error) => {
     console.log('MongoDB connection error. Please make sure MongoDB is running. ' + err)

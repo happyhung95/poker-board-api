@@ -9,9 +9,8 @@ export const getAll = async (req: Request, res: Response, next: NextFunction) =>
     const games = await Game.find().select({ name: 1 }).exec()
 
     res.status(200).json(games)
-  } catch (error) {
-    // disable for now since there's some type script errors while passing the error obj
-    // next(new InternalServerError('Internal Server Error', error))
+  } catch (error: any) {
+    next(new InternalServerError('Internal Server Error', error))
   }
 }
 
@@ -23,9 +22,8 @@ export const getOne = async (req: Request, res: Response, next: NextFunction) =>
     if (!game) return next(new NotFoundError('Game not found'))
 
     res.status(200).json(game)
-  } catch (error) {
-    // disable for now since there's some type script errors while passing the error obj
-    // next(new InternalServerError('Internal Server Error', error))
+  } catch (error: any) {
+    next(new InternalServerError('Internal Server Error', error))
   }
 }
 
@@ -39,9 +37,8 @@ export const createGame = async (req: Request, res: Response, next: NextFunction
     newGame.save()
 
     res.status(201).json(newGame)
-  } catch (error) {
-    // disable for now since there's some type script errors while passing the error obj
-    // next(new InternalServerError('Internal Server Error', error))
+  } catch (error: any) {
+    next(new InternalServerError('Internal Server Error', error))
   }
 }
 
@@ -59,9 +56,8 @@ export const changeStatusGame = async (req: Request, res: Response, next: NextFu
     game.save()
 
     res.status(200).json(game)
-  } catch (error) {
-    // disable for now since there's some type script errors while passing the error obj
-    // next(new InternalServerError('Internal Server Error', error))
+  } catch (error:any) {
+    next(new InternalServerError('Internal Server Error', error))
   }
 }
 
@@ -73,8 +69,7 @@ export const deleteGame = async (req: Request, res: Response, next: NextFunction
     if (!deletedGame) return next(new NotFoundError('Game not found'))
 
     res.status(204).json()
-  } catch (error) {
-    // disable for now since there's some type script errors while passing the error obj
-    // next(new InternalServerError('Internal Server Error', error))
+  } catch (error:any ) {
+    next(new InternalServerError('Internal Server Error', error))
   }
 }

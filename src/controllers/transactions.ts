@@ -97,7 +97,7 @@ export const updateTransactions = async (req: Request, res: Response, next: Next
     game = await Game.findById(gameId).exec()
 
     res.status(201).json(game)
-  } catch (error) {
-    // next(new InternalServerError('Internal Server Error', error))
+  } catch (error: any) {
+    next(new InternalServerError('Internal Server Error', error))
   }
 }

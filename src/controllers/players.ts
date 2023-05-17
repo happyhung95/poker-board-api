@@ -81,7 +81,7 @@ export const updatePlayers = async (req: Request, res: Response, next: NextFunct
     if (errorCount !== 0) return next(new InvalidRequestError(`Invalid Request: ${typeErrorMsg} ${errorMsg}`))
 
     res.status(201).json(game)
-  } catch (error) {
-    // next(new InternalServerError('Internal Server Error', error))
+  } catch (error: any) {
+    next(new InternalServerError('Internal Server Error', error))
   }
 }
