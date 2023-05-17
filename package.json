@@ -1,9 +1,6 @@
 {
   "name": "express-typescript-starter",
   "version": "0.1.0",
-  "engines": {
-    "node": "12.x"
-  },
   "description": "A starting point for Node.js express apps with TypeScript",
   "repository": {
     "type": "git",
@@ -13,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run serve",
-    "build": "npm run build-ts && npm run lint && npm run copy-static-assets",
+    "build": "npm run build-sass && npm run build-ts && npm run lint && npm run copy-static-assets",
     "serve": "node dist/server.js",
     "watch-node": "nodemon dist/server.js",
     "watch": "concurrently -k -p \"[{name}]\" -n \"Sass,TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
