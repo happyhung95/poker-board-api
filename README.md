@@ -15,9 +15,9 @@ https://app.swaggerhub.com/apis-docs/happyhung95/Poker-board/1.0.0
 The server emits a socket event `'update {gameId}'` with the updated game object at every transactions / players update request.
 
 ### Use this API
-Feel free to use this API at: https://poker-board.herokuapp.com/api/v1
+Feel free to use this API at: https://poker-board-api.onrender.com/api/v1
 
-[Poker Board Client](https://pokerboard.netlify.app/)
+[Poker Board Client](https://pokerboard.netlify.app/) (https://happyhung.fun)
 
 [Poker Board Client Github](https://github.com/happyhung95/poker-board-client)
 

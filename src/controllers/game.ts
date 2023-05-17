@@ -6,7 +6,7 @@ import { InternalServerError, NotFoundError, InvalidRequestError } from '../help
 //* GET /
 export const getAll = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const games = await Game.find().select({ name: 1, deleted: 1 }).exec()
+    const games = await Game.find({ deleted: false }).select({ name: 1, deleted: 1 }).exec()
 
     res.status(200).json(games)
   } catch (error) {
